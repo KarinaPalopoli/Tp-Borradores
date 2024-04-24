@@ -1,1 +1,72 @@
-Rutinas
+package tp2024grupo777
+
+import (
+	"github.com/untref-ayp2/data-structures"
+
+)
+
+
+// DEFINO LAS ESTRUCTURAS
+
+type Ejercicios struct {
+	nombre string
+	descripcion string
+	tiempoEstimado int // En minutos
+	caloriasQuemadas int
+	tipoDeEjercicio [] string // Por ejemplo: cardio, tonicidad, balance.
+	nivelDificultad string // principiante, intermedio, avanzado...
+	}
+	
+//// SANTIAGO:::::e
+//Ejercicio[T any] struct {
+//	nombre                   string
+	//descripcion              string
+//	tiempo                   int
+///	calorias                 int
+//	tipoDeEjercicio          []string
+//	puntosPorTipoDeEjercicio []int
+///	dificultad               string // principiante, intermedio, avanzado
+//
+}
+
+	// Definición de la estructura Rutina
+	type Rutina struct {
+	Nombre string
+	DuracionTotal int // En minutos 
+	EjerciciosIncluidos []Ejercicios
+	tipoDeEjercicio [] string
+	CaloriasQuemadas int
+	NivelDificultad string
+	}
+	
+	// Definición de la estructura Resumen de Rutina
+	type Resumen struct {
+	CaloriasQuemadasTotales int 
+	PuntosDimensión map[string]int // Mapa donde se almacenan los puntos por dimensión (por ejemplo, "Tone", "Cardio", "Balance"...)
+	}
+	
+
+
+	//
+	//// Crear instancia de Ejercicios
+
+
+// Crear instancia de Rutina
+rutina1 := Rutina{
+    Nombre: "Rutina matutina",
+    DuracionTotal: 60,
+    EjerciciosIncluidos: []Ejercicios{ejercicio1},
+}
+
+
+
+
+// Crear instancia de Resumen
+resumen1 := Resumen{
+   CaloriasQuemadasTotales: 200,
+   PuntosDimensión :map[string]int{
+ "Tone": 10,
+ "Cardio": 20,
+ "Balance": 5,
+},
+}
