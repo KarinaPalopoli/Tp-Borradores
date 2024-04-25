@@ -152,19 +152,24 @@ func TestFiltrarEjercicios(t *testing.T){
         dificultad: "intermedio",
     }
     lista.listaDeEjercicios["Estocadas"] = &ejercicio3
+
     // Caso de prueba donde se filtra por tipo de ejercicio
     ejerciciosFiltrados,error:= lista.FiltrarEjercicios("balance", "", 0)
     assert.Equal(t, &ejercicio3, ejerciciosFiltrados[0], "Los ejercicios deberían ser iguales")
     assert.NoError(t, error) // No debería haber error
+
     // Caso de prueba donde se filtra por mínimo de calorías
     ejerciciosFiltrados,_= lista.FiltrarEjercicios("", "", 90) // Debería traer un slice con 2 ejercicios
     assert.Equal(t,2,len(ejerciciosFiltrados))
+
     // Caso de prueba donde se filtra por dificultad
     ejerciciosFiltrados,_= lista.FiltrarEjercicios("", "intermedio", 0)
     assert.Equal(t, &ejercicio3, ejerciciosFiltrados[0], "Los ejercicios deberían ser iguales")
-    // Caso de prueba donde no se paasan los filtros vacíos, debería traer un slice con 3 elementos
+
+    // Caso de prueba donde no se pasan los filtros vacíos, debería traer un slice con 3 elementos
     ejerciciosFiltrados,_= lista.FiltrarEjercicios("", "", 0)
     assert.Equal(t,3,len(ejerciciosFiltrados))
+    
     // Caso de prueba donde no se encuentra ejercicio que cumpla los criterios de filtro. Debería dar error
     ejerciciosFiltrados,error= lista.FiltrarEjercicios("", "", 200)
     assert.Error(t, error) // Debería haber error
