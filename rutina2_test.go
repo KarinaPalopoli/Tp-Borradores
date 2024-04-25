@@ -31,7 +31,7 @@ func TestBorrarRutinaNoExistente(t *testing.T) {
 	}
 }
 
-// TestAgregarEjercicioARutinaDuplicate tests adding a duplicate exercise to a routine.
+// VERIFICA EN EL CASO DE AGREGAR UNA RUTINA DUPICADA
 
 func TestAgregarEjercicioARutinaExistente(t *testing.T) {
 	lista := NewListaDeRutinas()
@@ -47,8 +47,7 @@ func TestAgregarEjercicioARutinaExistente(t *testing.T) {
 	}
 }
 
-// TestAgregarEjercicioARutinaNoRutina tests adding an exercise to a non-existent routine. 
-
+// VERIFICA AGREGAR RUTINA SIN EJERCICIO
 func TestAgregarEjercicioARutinaInexistente(t *testing.T) {
 	lista := NewListaDeRutinas()
 	ejercicio := &Ejercicio{nombre: "sentadillas", tiempo: 10, calorias: 130, tipoDeEjercicio: []string{"TONICIDAD"}, dificultad: "INTERMEDIO"}
