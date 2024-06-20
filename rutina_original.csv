@@ -1,0 +1,17 @@
+nombre,duracion,ejerciciosTotales,tipoDeEjercicios,caloriasQuemadasTotales,dificultad
+Rutina 5,85,"Pull-ups,Salto con cuerda,Plancha,Deadlift,Push-ups con rodillas",fuerza,0,principiante
+Rutina 13,110,"Elevación de rodillas,Planchas laterales,Deadlift,Push-ups con rodillas,Abdominales",cardio,0,intermedio
+Rutina 14,75,"Salto con cuerda,Deadlift,Yoga,Push-ups con rodillas,Burpees",cardio,0,principiante
+Rutina 15,85,"Elevación de rodillas,Planchas laterales,Deadlift,Push-ups con rodillas,Tijeras",cardio,0,avanzado
+Rutina 2,110,"Plancha,Deadlift,Yoga,Push-ups con rodillas,Burpees","balance,fuerza",0,avanzado
+Rutina 11,65,"Elevación de rodillas,Planchas laterales,Remo,Saltos de estrella,Tijeras",cardio,0,principiante
+Rutina 12,95,"Yoga,Planchas laterales,Deadlift,Push-ups con rodillas,Abdominales","balance,fuerza",0,avanzado
+Rutina 1,90,"Sentadilla búlgara,Yoga,Deadlift,Sentadillas,Saltos de estrella",fuerza,0,intermedio
+Rutina 3,75,"Elevación de rodillas,Planchas laterales,Remo,Saltos de estrella,Tijeras",cardio,0,principiante
+Rutina 8,80,"Salto con cuerda,Plancha,Deadlift,Push-ups con rodillas,Abdominales",cardio,0,principiante
+Rutina 9,115,"Elevación de rodillas,Salto con cuerda,Planchas laterales,Deadlift,Tijeras",cardio,0,avanzado
+Rutina 10,105,"Pull-ups,Yoga,Deadlift,Planchas laterales,Push-ups con rodillas",fuerza,0,intermedio
+Rutina 4,95,"Salto con cuerda,Planchas laterales,Deadlift,Push-ups con rodillas,Abdominales",cardio,0,intermedio
+Rutina 6,70,"Salto con cuerda,Planchas laterales,Deadlift,Push-ups con rodillas,Abdominales",cardio,0,avanzado
+Rutina 7,100,"Yoga,Deadlift,Planchas laterales,Remo,Tijeras","balance,fuerza",0,intermedio
+Prueba,80,"Remo,Yoga",fuerza,0,intermedio
