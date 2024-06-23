@@ -6,12 +6,12 @@ import (
 
 // Estructura de Rutina
 type Rutina struct {
-	Nombre                  string `csv:"Nombre"`
-	Duracion                int `csv:"Duración"`
-	EjerciciosTotales       []*Ejercicio `csv:"Ejercicios:"`
+	Nombre                  string        `csv:"Nombre"`
+	Duracion                int           `csv:"Duración"`
+	EjerciciosTotales       []*Ejercicio  `csv:"Ejercicios:"`
 	TipoDeEjercicios        TipoEjercicio `csv:"Tipo de Ejercicios"`
-	CaloriasQuemadasTotales int `csv:"Calorías totales"`
-	Dificultad              Dificultad `csv:"Dificultad"`
+	CaloriasQuemadasTotales int           `csv:"Calorías totales"`
+	Dificultad              Dificultad    `csv:"Dificultad"`
 }
 
 // Función auxiliar para calcular la duración total de una rutina
@@ -133,9 +133,9 @@ func (lista *ListaDeRutinas) ModificarRutina(nombre string, nuevosEjerciciosTota
 	if _, existe := lista.listaDeRutinas[nombre]; !existe {
 		return errors.New("la rutina no existe")
 	}
-		lista.AgregarRutina(nombre, nuevosEjerciciosTotales)
-		return nil
-	}
+	lista.AgregarRutina(nombre, nuevosEjerciciosTotales)
+	return nil
+}
 
 // ListarRutinas permite listar todas las rutinas contenidas dentro del map
 // de listaDeRutinas
@@ -280,14 +280,13 @@ func (lista *ListaDeRutinas) GeneracionAutomagica(nombre string, duracionTotal i
 	}
 
 	// Agregar la rutina a la lista de rutinas
-	lista.AgregarRutina(nombre,rutinaEjerciciosOrdenados)
-	rutina,err:= lista.ConsultarRutina(nombre)
+	lista.AgregarRutina(nombre, rutinaEjerciciosOrdenados)
+	rutina, err := lista.ConsultarRutina(nombre)
 
 	return rutina, err
 }
 
 // Generación Automágica de Rutinas 2
-
 
 func (lista *ListaDeRutinas) GeneracionAutomagica2(nombre string, caloriasObjetivo int, listaEjercicios *ListaDeEjercicios) (*Rutina, error) {
 	// Obtener todos los ejercicios
@@ -315,14 +314,18 @@ func (lista *ListaDeRutinas) GeneracionAutomagica2(nombre string, caloriasObjeti
 			caloriasAcumuladas += ejercicio.Calorias
 
 			// Verificar si se alcanzaron las calorías objetivo
-			if caloriasAcumuladas >= caloriasObjetivo {
-				break
-			}
+
 		}
 	}
+	if caloriasAcumuladas < caloriasObjetivo {
+		return nil, errors.New("no es posible alcanzar las calorias objetivo con los ejercicios disponibles")
+	} else {
 
-	lista.AgregarRutina(nombre,rutinaEjercicios)
-	rutina,_:= lista.ConsultarRutina(nombre)
+		lista.AgregarRutina(nombre, rutinaEjercicios)
+
+	}
+
+	rutina, _ := lista.ConsultarRutina(nombre)
 
 	return rutina, nil
 }
@@ -376,7 +379,7 @@ func (lista *ListaDeRutinas) GeneracionAutomagica3v2(nombre string, duracionTota
 	if len(rutinaEjercicios) == 0 {
 		return nil, errors.New("no se pudieron seleccionar ejercicios")
 	}
-	lista.AgregarRutina(nombre,rutinaEjercicios)
-	rutina,err:= lista.ConsultarRutina(nombre)
+	lista.AgregarRutina(nombre, rutinaEjercicios)
+	rutina, err := lista.ConsultarRutina(nombre)
 	return rutina, err
 }
